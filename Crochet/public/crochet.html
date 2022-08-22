@@ -1,0 +1,261 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Crochet</title>
+
+    <style>
+    :root{
+        --main-color: #d3ad7f;
+        --black: #13131a;
+        --bg: #010103;
+        --border:.1rem solid rgba(255,255,255,.3)
+    }
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 9rem;
+        scroll-behavior: smooth;
+    }
+    html::-webkit-scrollbar{
+        width: .8rem;
+    }
+    html::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    html::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: .5rem;
+    }
+        .search-form {
+            position: absolute;
+            top: 115%; right: 7%;
+            background: #fff;
+            width: 50rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        .search-form input {
+            height: 100%;
+            width: 100%;
+            color: black;
+            font-size: 1.6rem;
+            padding: 1rem;
+        }
+        .search-form label {
+            cursor: pointer;
+            font-size: 2.2rem;
+            margin-right: 1.5rem;
+            color: black;
+        }
+        .search-form label:hover {
+            color: blanchedalmond;
+        }
+        .icons div {
+            cursor: pointer;
+            margin-left: 2rem;
+        }
+        .icons div:hover{
+            color: blanchedalmond;
+        }
+        .nav a:hover{
+            color: blanchedalmond;
+            border-bottom: .1rem solid blanchedalmond;
+            padding-bottom: .5rem;
+        }
+        .nav a{
+            margin:0 1rem;
+            font-size: 1.6rem;
+            color: bisque;
+        }
+        * {
+        font-family: 'Roboto', sans-serif;
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none; border: none;
+        text-transform: capitalize;
+        transition: 150ms;
+        color: azure;
+        }
+        .cart-items-container {
+            position: absolute;
+            top: 100%; right: -100%;
+            height: calc(100vh - 9.5rem);
+            width: 35rem;
+            background-color: blanchedalmond;
+            padding:0 1.5rem;
+        }
+        .cart-items-container .cart-item {
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+        }
+        .cart-item .path {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: black;
+        }
+        .cart-item .path:hover {
+            color: blanchedalmond;
+        }
+        .cart-item img{
+            height: 7rem;
+        }
+        .h3 {
+            font-size: 2rem;
+            color: black;
+            padding-bottom: .5rem;
+        }
+        .price {
+            font-size: 1.5rem;
+            color: blanchedalmond;
+        }
+        .button {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .7rem 3rem;
+            font-size: 1.7rem;
+            color: pink;
+            background-color: blanchedalmond;
+            cursor: pointer;
+        }
+        .button:hover {
+            letter-spacing: .2rem;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Header section starts here -->
+    <header class="bg-black flex items-center justify-between p-4 border-b-2 border-orange-200
+    fixed top-0 left-0 right-0 z-1000" >
+
+        <a href="#" class=" h-10 w-10">
+            <img src="img/images.jpeg" alt="">
+        </a>
+    
+        <nav class="navbar margin-0 text-sm pb-5">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#review">Reviews</a>
+            <a href="#contacts">Contacts</a>
+        </nav>
+    
+        <div class="icons ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/superfine.jpeg" alt="">
+                <div class="content">
+                    <h3>Super Fine Weight yarn</h3>
+                    <div class="price">R20.00</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/fine.jpeg" alt="">
+                <div class="content">
+                    <h3>Fine Weight yarn</h3>
+                    <div class="price">R29.99</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/light.jpeg" alt="">
+                <div class="content">
+                    <h3>Light Weight yarn</h3>
+                    <div class="price">R35.00</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/Medium.jpeg" alt="">
+                <div class="content">
+                    <h3>Medium Weight yarn</h3>
+                    <div class="price">R45.00</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/Bulky.jpeg" alt="">
+                <div class="content">
+                    <h3>Bulky Weight yarn</h3>
+                    <div class="price">R69.99</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/superbulky.jpeg" alt="">
+                <div class="content">
+                    <h3>Super Bulky Weight yarn</h3>
+                    <div class="price">R80.00</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>>
+                </span>
+                <img src="img/Jumbo.jpeg" alt="">
+                <div class="content">
+                    <h3>Jumbo Weight yarn</h3>
+                    <div class="price">R99.99</div>
+                </div>
+            </div>
+            <button>Checkout Now</button>
+        </div>
+    </header>
+    <!-- Header section ends here -->
+
+
+
+    <!-- custom js file link  -->
+    <script src=""js/script.js></script>
+    
+</body>
+</html>
